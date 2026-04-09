@@ -2,10 +2,11 @@ package handlers
 
 import (
 	"net/http"
-	"fmt"
+	"os"
 )
 
 func HomeHandler(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "text/html")
-	fmt.Fprint(writer, "<h1>Hello, World!<h1>")
+	filebytes, _ := os.ReadFile("templates/pages/home.html")
+	writer.Write(filebytes)
 }
