@@ -16,7 +16,7 @@ fi
 
 go build -o $BuildDir/server ./cmd/server/main.go
 
-cp -r ./templates $BuildDir/templates
+cp -r ./pages $BuildDir/pages
 
 cp -r ./static $BuildDir/static
 
